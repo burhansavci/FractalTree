@@ -15,7 +15,7 @@
         <ApplicationTitle>FractalTree</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.fractaltree</ApplicationId>
+        <ApplicationId>burhan.savci.fractaltree</ApplicationId>
         <ApplicationIdGuid>6A008A0D-EFED-49D7-A28B-A78F18E35EA1</ApplicationIdGuid>
 
         <!-- Versions -->
@@ -28,6 +28,14 @@
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
+        <AndroidKeyStore>True</AndroidKeyStore>
+        <AndroidSigningKeyStore>..\burhan.savci.fractaltree.keystore</AndroidSigningKeyStore>
+        <AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
+        <AndroidSigningKeyPass></AndroidSigningKeyPass>
+        <AndroidSigningStorePass></AndroidSigningStorePass>
     </PropertyGroup>
 
     <ItemGroup>
