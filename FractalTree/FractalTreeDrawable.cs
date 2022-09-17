@@ -15,7 +15,7 @@ public class FractalTreeDrawable : IDrawable
         var coordinateY = dirtyRect.Center.Y + dirtyRect.Center.Y / 2;
 
         canvas.StrokeColor = Colors.Aqua;
-        canvas.StrokeSize = 6;
+        canvas.StrokeSize = 3;
 
         DrawBranches(canvas, coordinateX, coordinateY, Angle, Length, Level);
     }
