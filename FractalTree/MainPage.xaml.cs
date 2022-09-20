@@ -7,10 +7,10 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
-    void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
+    private void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
     {
-        double degrees = args.NewValue;
-        displayLabel.Text = String.Format("The angle is {0}° degrees", degrees);
+        var degrees = args.NewValue;
+        displayLabel.Text = $"The angle is {degrees}° degrees";
 
         ((FractalTreeDrawable)fractalTreeView.Drawable).DeltaAngle = degrees * (Math.PI / 180);
         fractalTreeView.Invalidate();
