@@ -2,12 +2,12 @@
 
 public class FractalTreeDrawable : IDrawable
 {
-    public double Angle = Math.PI * -0.5; //90 degrees
+    private const double Angle = Math.PI * -0.5; //90 degrees
     public double DeltaAngle = 0.7;
-    private double Length = 120;
-    private readonly double Shrink = 0.67;
-    private int Level = 0;
-    private static readonly int MaxLevel = 10;
+    private const double Length = 120;
+    private const double Shrink = 0.67;
+    private const int Level = 0;
+    private const int MaxLevel = 10;
 
     public void Draw(ICanvas canvas, RectF dirtyRect)
     {
